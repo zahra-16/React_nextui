@@ -7,6 +7,7 @@ export default function CardProduct({
   category,
   description,
   image,
+  id,
 }) {
   try {
     return (
@@ -24,15 +25,17 @@ export default function CardProduct({
             <h4 className="font-bold text-xl">{title}</h4>
             <p className="text-xs uppercase font-bold mt-2">{category}</p>
             <p className="text-xs uppercase mt-1 truncate">{description}</p>
-            <small className="text-sm text-default-500 mt-1 truncate">{price}</small>
+            <small className="text-sm text-default-500 mt-1 truncate">
+              {price}
+            </small>
             <div className="card-actions w-full">
-              <Link to={"/produkdetail/" + data.id}>
-                <div className="flex justify-center p-3">
+              <div className="flex justify-center p-3">
+                <Link to={"/produk/" + id}>
                   <Button className="p-2 flex justify-center bg-black text-white">
                     Visit
                   </Button>
-                </div>
-              </Link>
+                </Link>
+              </div>
             </div>
           </CardHeader>
         </CardBody>
