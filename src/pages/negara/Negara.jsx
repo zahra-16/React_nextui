@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useReducer } from "react";
 import axios from "axios";
 import { useSearchParams } from "react-router-dom";
-import NegaraView from "./NegaraView";
+import NegaraView from "./Negaraview";
 
 const nilaiDefault = {
   data: [],
