@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
+  
   Input,
   DropdownItem,
   DropdownTrigger,
@@ -14,28 +16,29 @@ import {
 import { Search } from "lucide-react";
 
 export default function App() {
+
   return (
     <Navbar isBordered>
       <NavbarContent justify="start">
         <NavbarBrand className="mr-4">
-          <div className="">ApplicationLogo</div>
-          <p className="hidden sm:block font-bold text-inherit">ACME</p>
+          <div className="">Zahra</div>
+          <p className="hidden sm:block font-bold text-inherit">XI RPL 1</p>
         </NavbarBrand>
         <NavbarContent className="hidden sm:flex gap-3">
+        
           <NavbarItem>
-            <Link color="foreground" href="#">
-              Features
-            </Link>
-          </NavbarItem>
-          <NavbarItem isActive>
-            <Link href="#" aria-current="page" color="secondary">
-              Customers
-            </Link>
+          <Link to="/">
+          Resto
+          </Link>
           </NavbarItem>
           <NavbarItem>
-            <Link color="foreground" href="#">
-              Integrations
-            </Link>
+          <Link to="/produk">Produk
+          </Link>
+          </NavbarItem>
+          <NavbarItem>
+          <Link to="/negara">
+          Negara
+          </Link>
           </NavbarItem>
         </NavbarContent>
       </NavbarContent>
@@ -63,13 +66,13 @@ export default function App() {
               color="secondary"
               name="Jason Hughes"
               size="sm"
-              src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
+              src="https://i.pinimg.com/564x/4a/b1/2a/4ab12ae9e73fd59c1ca67b892f90c558.jpg"
             />
           </DropdownTrigger>
           <DropdownMenu aria-label="Profile Actions" variant="flat">
             <DropdownItem key="profile" className="h-14 gap-2">
               <p className="font-semibold">Signed in as</p>
-              <p className="font-semibold">zoey@example.com</p>
+              <p className="font-semibold">User@example.com</p>
             </DropdownItem>
             <DropdownItem key="settings">My Settings</DropdownItem>
             <DropdownItem key="team_settings">Team Settings</DropdownItem>
