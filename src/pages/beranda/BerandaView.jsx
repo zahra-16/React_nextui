@@ -52,9 +52,11 @@ const BerandaView = ({ ubahCari, cariResto, hasilCari, hasilFilter }) => {
                     />
                   </div>
                   <CardHeader className="pb-0 pt-2 px-3 flex-col items-start">
+                    <div className="">
                     <p className="text-tiny uppercase font-bold p-3">
                       {data.name}
                     </p>
+                    </div>
                     <small className="text-default-500 truncate p-3">
                       {data.description}
                     </small>
