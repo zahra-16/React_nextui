@@ -5,7 +5,7 @@ const NegaraView = ({ ubahCari, hasilFilter }) => {
   try {
     return (
       <div className="flex flex-col">
-        <div className="grid justify-items-stretch pt-12 dark:bg-gray-800">
+        <div className="grid justify-items-stretch dark:bg-gray-800">
           <div className="grid justify-items-stretch pt-12 bg-inherit">
             <div className="">
               <h1 className="text-3xl font-bold mb-4 pt-3 pb-6 text-center dark:text-white">
