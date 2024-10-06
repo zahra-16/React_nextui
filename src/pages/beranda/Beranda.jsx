@@ -1,8 +1,6 @@
-import React, { useCallback, useEffect, useReducer, useState } from "react";
-import Navbar from "../../components/Navbar";
+import { useCallback, useEffect, useReducer } from "react";
 import axios from "axios";
-import { data } from "autoprefixer";
-import { Link, useSearchParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import BerandaView from "./BerandaView";
 
 const nilaiDefault ={

@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import CardProduct from "../../components/CardProduct";
 
 export default function ProductView({ products }) {
@@ -13,7 +12,7 @@ export default function ProductView({ products }) {
           </div>
           <div className="flex justify-center">
             <div className="grid grid-cols-3 gap-7 p-6 dark:bg-black">
-              {products?.map((product, index) => (
+              {products?.map((product) => (
                 <CardProduct
                   key={product.id}
                   id={product.id}

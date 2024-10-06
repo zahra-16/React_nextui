@@ -1,5 +1,4 @@
 import { Card, CardHeader, CardBody, Image, Button } from "@nextui-org/react";
-import { data } from "autoprefixer";
 import { Link } from "react-router-dom";
 export default function CardProduct({
   title,
