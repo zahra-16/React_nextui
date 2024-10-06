@@ -6,6 +6,11 @@ const BerandaView = ({ ubahCari, cariResto, hasilCari, hasilFilter }) => {
   return (
     <div className="flex flex-col">
       <div className="grid justify-items-stretch pt-12 bg-white">
+      <div className="">
+            <h1 className="text-3xl font-bold mb-4 pt-3 pb-6 text-center dark:text-white">
+              Daftar Resto
+            </h1>
+          </div>
         <label className="input flex items-center gap-2 w-[500px] h-[40px]  justify-self-center rounded-lg border-2 border-gray-300 bg-white px-3 shadow-md focus-within:border-slate-950 focus-within:ring-2 focus-within:ring-offset-slate-900 transition-all duration-300 ease-in-out">
           <input
             type="text"
@@ -35,7 +40,7 @@ const BerandaView = ({ ubahCari, cariResto, hasilCari, hasilFilter }) => {
       </div>
 
       <div className="flex justify-center pt-12 bg-white">
-        <div className="grid grid-cols-3 gap-12 pb-12 ">
+        <div className="grid grid-cols-3 gap-10 pb-10 ">
           {hasilFilter?.restaurants?.map((data) => (
             <div
               className="card card-compact bg-base-100 w-96"
