@@ -5,8 +5,8 @@ const NegaraView = ({ ubahCari, hasilFilter }) => {
   try {
     return (
       <div className="flex flex-col">
-        <div className="grid justify-items-stretch pt-12">
-          <div className="grid justify-items-stretch pt-12 bg-white">
+        <div className="grid justify-items-stretch pt-12 dark:bg-gray-800">
+          <div className="grid justify-items-stretch pt-12 bg-inherit">
             <div className="">
               <h1 className="text-3xl font-bold mb-4 pt-3 pb-6 text-center dark:text-white">
                 Daftar Negara
@@ -32,22 +32,13 @@ const NegaraView = ({ ubahCari, hasilFilter }) => {
                 />
               </svg>
             </label>
-
-            {/* <div className="">
-            <p>
-              Hasil dari: {cariResto}, ditemukan: {hasilCari?.founded}
-            </p>
-          </div> */}
           </div>
 
-          <div className="flex justify-center pt-12 bg-white">
+          <div className="flex justify-center pt-12 bg-inherit">
             <div className="grid grid-cols-3 gap-12 pb-12 ">
               {hasilFilter?.map((data) => (
-                <div
-                  className="card card-compact bg-base-100 w-96"
-                  key={data?.name}
-                >
-                  <Card className="py-4 border border-black">
+                <div className="card card-compact w-96" key={data?.name}>
+                  <Card className="py-4 dark:bg-black">
                     <CardBody className="overflow-visible py-2">
                       <div className="flex justify-center p-4">
                         <Image
@@ -68,7 +59,7 @@ const NegaraView = ({ ubahCari, hasilFilter }) => {
                           <Link to={"/detailnegara/" + data.id}>
                             <div className="flex justify-center p-3">
                               <Button
-                                className="p-2 flex justify-center bg-black text-white"
+                                className="p-2 flex justify-center dark:bg-gray-700 text-white"
                                 color="danger"
                               >
                                 Visit
