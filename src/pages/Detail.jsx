@@ -24,7 +24,7 @@ export default function Detail() {
     //   <img src={resto?.thumbnail} alt="" />
     //   <h1>{resto?.restaurant.name }</h1>
     // </div>
-    <div className="hero bg-base-200 min-h-screen bg-white">
+    <div className="hero bg-base-200 min-h-screen bg-white dark:bg-gray-800">
       <div className="hero-content text-center space-y-8 flex-col">
         <div className="flex justify-center p-7 pt-6 pb-4">
           <img
