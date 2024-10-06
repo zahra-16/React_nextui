@@ -16,7 +16,7 @@ export default function CardProduct({
           <div className="flex justify-center p-4">
             <Image
               alt={title}
-              className="object-cover rounded-xl "
+              className="object-contain h-[250px] rounded-xl "
               src={image}
               width={270}
             />
