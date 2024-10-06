@@ -12,9 +12,51 @@ import {
   DropdownMenu,
   Avatar,
 } from "@nextui-org/react";
-import { Search } from "lucide-react";
+import { Moon, Search, Sun } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function App() {
+  const [theme, setTheme] = useState("light");
+  const root = window.document.documentElement;
+  const localStorage = window.localStorage;
+
+  useEffect(() => {
+    if (localStorage.getItem("theme")) {
+      const savedTheme = localStorage.getItem("theme");
+      document.documentElement.setAttribute("class", savedTheme);
+      return;
+    }
+
+    if (theme == "dark") {
+      document.documentElement.setAttribute("class", "dark");
+      localStorage.setItem("theme", "dark");
+      return;
+    }
+    if (theme == "light") {
+      document.documentElement.setAttribute("class", "light");
+      localStorage.setItem("theme", "light");
+      return;
+    }
+  }, []);
+
+  const switchThemes = (type) => {
+    if (type == "dark") {
+      setTheme("dark");
+      localStorage.setItem("theme", "dark");
+      root.classList.remove("light");
+      root.classList.add("dark");
+      return;
+    }
+    if (type == "light") {
+      setTheme("light");
+      localStorage.setItem("theme", "light");
+      root.classList.remove("dark");
+      root.classList.add("light");
+      return;
+    }
+    return;
+  };
+
   return (
     <Navbar isBordered>
       <NavbarContent justify="start">
@@ -51,73 +93,6 @@ export default function App() {
         /> */}
 
       <NavbarContent as="div" className="items-center" justify="end">
-        <Dropdown className="dropdown" placement="bottom-end">
-          <div tabIndex={0} role="button" className="btn m-1">
-            Theme
-            <svg
-              width="12px"
-              height="12px"
-              className="inline-block h-2 w-2 fill-current opacity-60"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 2048 2048"
-            >
-              <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
-            </svg>
-          </div>
-
-          <ul
-            tabIndex={0}
-            className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl"
-          >
-            <DropdownItem>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Default"
-                value="default"
-              />
-            </DropdownItem>
-            <DropdownItem>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Retro"
-                value="retro"
-              />
-            </DropdownItem>
-            <DropdownItem>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Dark"
-                value="Dark"
-              />
-            </DropdownItem>
-            <DropdownItem>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Valentine"
-                value="valentine"
-              />
-            </DropdownItem>
-            <DropdownItem>
-              <input
-                type="radio"
-                name="theme-dropdown"
-                className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-                aria-label="Light"
-                value="Light"
-              />
-            </DropdownItem>
-          </ul>
-        </Dropdown>
-      </NavbarContent>
-      <NavbarContent as="div" className="items-center" justify="end">
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
             <Avatar
@@ -143,6 +118,41 @@ export default function App() {
             <DropdownItem key="help_and_feedback">Help & Feedback</DropdownItem>
             <DropdownItem key="logout" color="danger">
               Log Out
+            </DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+
+        <Dropdown className="dropdown" placement="bottom-end">
+          <DropdownTrigger>
+            <div tabIndex={0} role="button" className="btn m-1">
+              Theme
+              <svg
+                width="12px"
+                height="12px"
+                className="inline-block h-2 w-2 ml-2 fill-current opacity-60"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 2048 2048"
+              >
+                <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
+              </svg>
+            </div>
+          </DropdownTrigger>
+
+          <DropdownMenu
+            tabIndex={0}
+            className="dropdown-content bg-base-300 rounded-box z-[1] w-52 p-2 shadow-2xl"
+          >
+            <DropdownItem key="dark" onClick={() => switchThemes("light")}>
+              <div className="flex space-x-4">
+                <Sun />
+                <span>Light Mode</span>
+              </div>
+            </DropdownItem>
+            <DropdownItem key="light" onClick={() => switchThemes("dark")}>
+              <div className="flex space-x-4">
+                <Moon />
+                <span>Dark Mode</span>
+              </div>
             </DropdownItem>
           </DropdownMenu>
         </Dropdown>
