@@ -5,7 +5,7 @@ import { Card, CardHeader, CardBody, Image, Button } from "@nextui-org/react";
 const NegaraView = ({ ubahCari, cariNegara, hasilCari, hasilFilter }) => {
   return (
     <div className="flex flex-col">
-      <div className="grid justify-items-stretch pt-12 bg-white">
+      <div className="grid justify-items-stretch pt-12">
         <div className="grid justify-items-stretch pt-12 bg-white">
           <div className="">
             <h1 className="text-3xl font-bold mb-4 pt-3 pb-6 text-center dark:text-white">

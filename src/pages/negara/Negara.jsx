@@ -5,8 +5,6 @@ import { data } from "autoprefixer";
 import { Link, useSearchParams } from "react-router-dom";
 import NegaraView from "./NegaraView";
 
-
-
 const nilaiDefault = {
   data: [],
   filterData: [],
@@ -75,14 +73,12 @@ const Negara = () => {
   console.log(state);
   return (
     <div className="min-h-screen bg-gray-100 ">
-      
-    <NegaraView
-      cariNegara={cariNegara}
-      hasilCari={state.filterData}
-      hasilFilter={hasilFilter}
-      ubahCari={ubahCari}
-    />
-    
+      <NegaraView
+        cariNegara={cariNegara}
+        hasilCari={state.filterData}
+        hasilFilter={hasilFilter}
+        ubahCari={ubahCari}
+      />
     </div>
   );
 };
